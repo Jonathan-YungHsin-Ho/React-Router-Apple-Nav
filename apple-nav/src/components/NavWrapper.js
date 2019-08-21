@@ -52,22 +52,9 @@ export default function NavWrapper() {
           <NavLink to='/'>ShopIcon</NavLink>
         </NavButtons>
       </StyledNav>
-      {products.map(({page, id, products}) => 
-        // console.log(page);
-        <Route path={`'/:${id}'`} render={props => <Nav {...props} key={id} products={products} page={page} />} />
+      {products.map(page => 
+        <Route path={`/${page.id}`} render={props => <Nav {...props} key={page.id} products={page.products} />} />
       )}
-
-    {/* <Route path='/mac' render={props => <Nav {...props} key={products[0].id} products={products[0].products} page={products[0].name} /> } />
-
-    <Route path='/ipad' render={props => <Nav {...props} key={products[1].id} products={products[1].products} page={products[1].name} /> } />
-
-    <Route path='/iphone' render={props => <Nav {...props} key={products[2].id} products={products[2].products} page={products[2].name} /> } />
-
-    <Route path='/watch' render={props => <Nav {...props} key={products[3].id} products={products[3].products} page={products[3].name} /> } />
-
-    <Route path='/tv' render={props => <Nav {...props} key={products[4].id} products={products[4].products} page={products[4].name} /> } />
-
-    <Route path='/music' render={props => <Nav {...props} key={products[5].id} products={products[5].products} page={products[5].name} /> } /> */}
 
     </div>
   )

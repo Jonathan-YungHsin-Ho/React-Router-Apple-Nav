@@ -35,7 +35,6 @@ const ProductLink = styled.a`
 `;
 
 export default function SubNav(props) {
-  console.log(props)
   return (
     <Center>
       <Icon />

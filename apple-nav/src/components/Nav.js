@@ -4,10 +4,9 @@ import SubNavWrapper from './SubNavWrapper';
 import SubNav from './SubNav';
 
 export default function Nav(props) {
-  console.log(props.products)
   return (
     <SubNavWrapper>
-      {props.products.map(product => <SubNav product={product}/>)}
+      {props.products.map(product => <SubNav key={product.id} product={product}/>)}
     </SubNavWrapper>
   )
 }
