@@ -51,9 +51,9 @@ export default function NavWrapper() {
           {products.map(({page, id}) => (
             <NavLink key={id} to={`/${id}`}>{page}</NavLink>
           ))}
-          <NavLink to='https://support.apple.com/'>Support</NavLink>
-          <NavLink to='https://www.apple.com/us/search'><i class="fas fa-search"></i></NavLink>
-          <NavLink to='https://www.apple.com/us/shop/goto/bag'><i class="fas fa-shopping-bag"></i></NavLink>
+          <NavLink to='/'>Support</NavLink>
+          <NavLink to='/'><i class="fas fa-search"></i></NavLink>
+          <NavLink to='/'><i class="fas fa-shopping-bag"></i></NavLink>
         </NavButtons>
       </StyledNav>
       {products.map(page => 
