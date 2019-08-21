@@ -1,22 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Center = styled.div`
+const ProductLink = styled.a`
+  color: #111111;
+  text-decoration: none;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 20px;
 `;
 
 const Icon = styled.div`
   width: 50px;
   height: 54px;
-  border: 1px solid #111111;
   margin-bottom: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 `;
 
 const ProductName = styled.p`
   font-size: 11px;
   text-align: center;
+
+  &:hover {
+    color: #0070c9;
+  }
 `;
 
 const NewProduct = styled.p`
@@ -25,23 +34,15 @@ const NewProduct = styled.p`
   text-align: center;
 `;
 
-const ProductLink = styled.a`
-  color: #111111;
-  text-decoration: none;
-
-  &:hover {
-    color: #0070c9;
-  }
-`;
-
 export default function SubNav(props) {
   return (
-    <Center>
+    <div>
       <ProductLink href={props.product.url}>
-        <Icon />
+        <Icon><i class={props.product.icon}></i></Icon>
         <ProductName>{props.product.name}</ProductName>
+        <ProductName>{props.product.extratext}</ProductName>
         <NewProduct>{props.product.new && 'New'}</NewProduct>
       </ProductLink>
-    </Center>
+    </div>
   )
 }

@@ -3,18 +3,24 @@ import styled from 'styled-components';
 
 import SubNav from './SubNav';
 
-const SubNavWrapper = styled.div`
+const SubNavBkgd = styled.div`
   background: #f2f2f2;
+  display: flex;
+  justify-content: center;
+`;
+
+const SubNavWrapper = styled.div`
   padding: 12px 0;
   height: 116px;
   display: flex;
-  justify-content: space-around;
 `;
 
 export default function Nav(props) {
   return (
-    <SubNavWrapper>
-      {props.products.map(product => <SubNav key={product.id} product={product}/>)}
-    </SubNavWrapper>
+    <SubNavBkgd>
+      <SubNavWrapper>
+        {props.products.map(product => <SubNav key={product.id} product={product}/>)}
+      </SubNavWrapper>
+    </SubNavBkgd>
   )
 }
