@@ -43,13 +43,13 @@ export default function NavWrapper() {
     <div>
       <StyledNav>
         <NavButtons>
-          <NavLink to='/'>AppleIcon</NavLink>
+          <NavLink to='/'><i class='fab fa-apple fa-lg'></i></NavLink>
           {products.map(({page, id}) => (
             <NavLink key={id} to={`/${id}`}>{page}</NavLink>
           ))}
           <NavLink to='/'>Support</NavLink>
-          <NavLink to='/'>SearchIcon</NavLink>
-          <NavLink to='/'>ShopIcon</NavLink>
+          <NavLink to='/'><i class="fas fa-search"></i></NavLink>
+          <NavLink to='/'><i class="fas fa-shopping-bag"></i></NavLink>
         </NavButtons>
       </StyledNav>
       {products.map(page => 

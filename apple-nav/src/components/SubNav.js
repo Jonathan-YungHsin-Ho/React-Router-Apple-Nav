@@ -37,9 +37,11 @@ const ProductLink = styled.a`
 export default function SubNav(props) {
   return (
     <Center>
-      <Icon />
-      <ProductName><ProductLink href={props.product.url}>{props.product.name}</ProductLink></ProductName>
-      <NewProduct>{props.product.new && 'New'}</NewProduct>
+      <ProductLink href={props.product.url}>
+        <Icon />
+        <ProductName>{props.product.name}</ProductName>
+        <NewProduct>{props.product.new && 'New'}</NewProduct>
+      </ProductLink>
     </Center>
   )
 }
